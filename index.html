@@ -7,5 +7,19 @@
     <script src="./main.js" defer="defer"></script>
     <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <form class="userInputForm">
+      <label class="countryLabel">City Search</label>
+      <input
+        type="text"
+        name="inputField"
+        placeholder="Example: Berlin,Germany"
+        class="countryInput"
+        required="true"
+      />
+      <input type="submit" name="inputSubmit" class="countrySubmit" value="Search" />
+      <label class="errorMessage"></label>
+    </form>
+    <div class="switchUnit">Switch to °F</div>
+  </body>
 </html>
