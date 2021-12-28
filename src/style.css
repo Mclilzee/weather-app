@@ -50,10 +50,45 @@ form {
 .switchUnit {
   color: white;
   margin-left: 10px;
-  font-size: 200%;
+  font-size: 120%;
   cursor: pointer;
 }
 
 .switchUnit:hover {
   color: rgb(109, 172, 117);
+}
+
+.currentWeather {
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  font-size: 150%;
+  color: white;
+}
+
+.currentWeatherInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  height: auto;
+  gap: 10px;
+  margin: 0;
+}
+
+#currentWeatherCityName {
+  margin: 0;
+}
+
+#currentWeatherTime {
+  font-size: 80%;
+  margin-top: -14%;
+}
+
+.currentWeatherAlertInformation {
+  align-self: center;
+  font-size: 80%;
+  color: white;
+  font-weight: bolder;
+  max-width: 20%;
 }
