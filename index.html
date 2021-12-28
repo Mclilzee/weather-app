@@ -17,9 +17,23 @@
         class="countryInput"
         required="true"
       />
-      <input type="submit" name="inputSubmit" class="countrySubmit" value="Search" />
+      <input
+        type="submit"
+        name="inputSubmit"
+        class="countrySubmit"
+        value="Search"
+      />
       <label class="errorMessage"></label>
     </form>
     <div class="switchUnit">Switch to °F</div>
+    <div class="currentWeather">
+      <div class="currentWeatherInformation">
+        <h2 id="currentWeatherCityName"></h2>
+        <img id="currentWeatherIcon" alt="Icon of weather" />
+        <div id="currentWeatherTime"></div>
+      </div>
+      <div class="currentWeatherAlertInformation">
+      </div>
+    </div>
   </body>
 </html>
