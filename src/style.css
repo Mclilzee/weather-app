@@ -1,3 +1,59 @@
 html {
   background-color: #4b555a;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+}
+
+.countryLabel {
+  font-weight: bolder;
+  font-size: 1.5em;
+  color: white;
+}
+
+.countryInput {
+  width: 100%;
+  max-width: 20%;
+  margin-bottom: 0.3%;
+}
+
+.errorMessage {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: red;
+}
+
+.countrySubmit {
+  width: 5%;
+  height: 25px;
+  background-color: royalblue;
+  border: none;
+  border-radius: 8%;
+  color: white;
+  font-weight: bolder;
+}
+
+.countrySubmit:hover {
+  background-color: rgb(109, 140, 235);
+}
+
+.switchUnit {
+  color: white;
+  margin-left: 10px;
+  font-size: 200%;
+  cursor: pointer;
+}
+
+.switchUnit:hover {
+  color: rgb(109, 172, 117);
+}
