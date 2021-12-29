@@ -4,7 +4,19 @@ import updateWeatherData from './fillInformation';
 
 // get last seached location if exist
 let location = localStorage.getItem('location');
-let unit = 'metric';
+let unit = localStorage.getItem('unit');
+const unitDOM = document.querySelector('.switchUnit');
+
+if (!unit) {
+  unit = 'metric';
+} else {
+  if (unit === 'metric') {
+    unitDOM.textContent = 'Switch to °F';
+  } else {
+    unitDOM.textContent = 'Switch to °C';
+  }
+}
+
 if (location) {
   fetchWeatherData(location);
 } else {
@@ -23,7 +35,11 @@ async function fetchWeatherData(input) {
     if (information.cod === 200) {
       const { lat } = information.coord;
       const { lon } = information.coord;
-      const cityName = `${information.name}, ${information.sys.country}`;
+      let countryName = '';
+      if (information.sys.country) {
+        countryName = ', ' + information.sys.country;
+      }
+      const cityName = `${information.name}${countryName}`;
       const data = await fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&units=${unit}&appid=9335ef49fc3e92d53f1e7a185462ef51`,
       ).then((dataJson) => dataJson.json());
@@ -33,6 +49,7 @@ async function fetchWeatherData(input) {
 
       location = input;
       localStorage.setItem('location', location);
+      localStorage.setItem('unit', unit);
     } else {
       errorMsg.textContent = `${input} was not found.`;
     }

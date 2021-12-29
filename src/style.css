@@ -1,6 +1,8 @@
 html {
   background-image: url('./background.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body {
@@ -60,21 +62,21 @@ form {
 }
 
 .currentWeather {
-  margin-top: 4%;
   display: flex;
   justify-content: center;
   font-size: 150%;
   color: white;
+  gap: 30px;
 }
 
 .currentWeatherInformation {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 20%;
   height: auto;
   gap: 10px;
   margin: 0;
+  border-bottom: solid black;
 }
 
 #currentWeatherCityName {
@@ -95,5 +97,42 @@ form {
   font-size: 80%;
   color: white;
   font-weight: bolder;
-  max-width: 20%;
+  max-width: 30%;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+#currentWeatherDetails {
+  font-size: 70%;
+  width: 100%;
+  font-weight: 900;
+}
+
+.currentWeatherFirstDetail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentWeatherSecondDetail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentWeatherHourlyContainer {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(5, 1, 1, 0.247);
+  font-weight: bolder;
+  font-size: smaller;
+  color: white;
+  overflow-x: scroll;
+}
+
+.hourlyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
 }
