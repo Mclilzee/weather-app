@@ -2,6 +2,12 @@
 import './style.css';
 import updateWeatherData from './fillInformation';
 
+
+
+const loadingScreen = document.querySelector(".loadingScreen");
+const errorMsg = document.querySelector('.errorMessage');
+
+
 // get last seached location if exist
 let location = localStorage.getItem('location');
 let unit = localStorage.getItem('unit');
@@ -25,8 +31,8 @@ if (location) {
 
 // get weather data then call to fill dom
 async function fetchWeatherData(input) {
-  const errorMsg = document.querySelector('.errorMessage');
 
+  loadingScreen.classList.toggle("loadingScreenHidden");
   try {
     const information = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=9335ef49fc3e92d53f1e7a185462ef51`,
@@ -55,6 +61,8 @@ async function fetchWeatherData(input) {
     }
   } catch (e) {
     console.error(`${e.name}: ${e.message}`);
+  } finally {
+    loadingScreen.classList.toggle("loadingScreenHidden");
   }
 }
 
