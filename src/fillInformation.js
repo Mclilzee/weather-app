@@ -28,7 +28,35 @@ function populateHourlyDetails(hourlyArray) {
 
     hourlyTime.textContent = getHourlyDate(data.dt);
     hourlyTemp.textContent = Math.round(data.temp) + ' ' + unit;
-    hourlyIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    hourlyIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    hourlyType.textContent = data.weather[0].main;
+
+    hourlyContainer.appendChild(hourlyTime);
+    hourlyContainer.appendChild(hourlyTemp);
+    hourlyContainer.appendChild(hourlyIcon);
+    hourlyContainer.appendChild(hourlyType);
+
+    container.appendChild(hourlyContainer);
+  }
+}
+
+// create DOM for daily infomration 
+function populateDailyDetails(dailyArray) {
+  const container = document.querySelector('.currentWeatherHourlyContainer');
+  container.innerHTML = "";
+
+  for (let data of hourlyArray) {
+    const hourlyContainer = document.createElement('div');
+    hourlyContainer.classList.add('hourlyContainer');
+
+    const hourlyTime = document.createElement('div');
+    const hourlyTemp = document.createElement('div');
+    const hourlyIcon = document.createElement('img');
+    const hourlyType = document.createElement('div');
+
+    hourlyTime.textContent = getHourlyDate(data.dt);
+    hourlyTemp.textContent = Math.round(data.temp) + ' ' + unit;
+    hourlyIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     hourlyType.textContent = data.weather[0].main;
 
     hourlyContainer.appendChild(hourlyTime);
@@ -95,7 +123,7 @@ function updateWeatherData(cityName, data, unitName) {
   document.getElementById('currentWeatherWind').textContent =
     'Wind: ' + data.current.wind_speed + ' ' + speedUnit;
 
-  populateHourlyDetails(data.hourly.slice(1, 24));
+  populateHourlyDetails(data.hourly.slice(1, 26));
   console.log(data);
 }
 

@@ -120,7 +120,6 @@ form {
 
 .currentWeatherHourlyContainer {
   display: flex;
-  gap: 20px;
   background-color: rgba(5, 1, 1, 0.247);
   font-weight: bolder;
   font-size: smaller;
@@ -133,6 +132,5 @@ form {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
   margin: 10px;
 }
