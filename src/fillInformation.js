@@ -156,7 +156,6 @@ function updateWeatherData(cityName, data, unitName) {
 
   populateHourlyDetails(data.hourly.slice(1, 26));
   populateDailyDetails(data.daily.slice(1));
-  console.log(data);
 }
 
 export default updateWeatherData;
